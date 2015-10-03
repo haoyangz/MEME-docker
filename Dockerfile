@@ -1,7 +1,8 @@
 FROM ubuntu:14.04
 
 MAINTAINER Haoyang Zeng <haoyangz@mit.edu>
-
+RUN apt-get update
+RUN apt-get install wget
 RUN mkdir /meme/
 WORKDIR /meme/
 RUN wget http://meme-suite.org/meme-software/4.10.2/meme_4.10.2.tar.gz && tar zxf meme_4.10.2.tar.gz && cd meme_4.10.2 && \
