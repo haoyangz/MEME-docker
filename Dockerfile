@@ -14,8 +14,8 @@ RUN PERL_MM_USE_DEFAULT=1 perl -MCPAN -e 'install XML::Compile::SOAP11'
 RUN PERL_MM_USE_DEFAULT=1 perl -MCPAN -e 'install XML::Compile::WSDL11'
 RUN PERL_MM_USE_DEFAULT=1 perl -MCPAN -e 'install XML::Compile::Transport::SOAPHTTP'
 
-RUN mkdir /meme/
-WORKDIR /meme/
+RUN mkdir /meme-install/
+WORKDIR /meme-install/
 RUN wget -q http://meme-suite.org/meme-software/4.10.2/meme_4.10.2.tar.gz && tar zxf meme_4.10.2.tar.gz && cd meme_4.10.2 && \
 ./configure --prefix=$HOME/meme --with-url=http://meme-suite.org --enable-build-libxml2 --enable-build-libxslt && \
 make && \
